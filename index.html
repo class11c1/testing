@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Box 11C1 — User Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="login" class="login">
+  <div class="login-card">
+    <div class="fb">f</div>
+    <h1>Đăng nhập</h1>
+    <p class="muted">Demo tài khoản người dùng</p>
+    <input id="loginName" value="admin" placeholder="Họ và tên">
+    <input id="loginPass" value="admin" type="password" placeholder="Mật khẩu">
+    <input id="loginClass" value="11C1" placeholder="Tên lớp">
+    <button class="primary" id="loginBtn">Đăng nhập</button>
+    <button class="link">Quên mật khẩu?</button>
+    <div class="line"><span>hoặc</span></div>
+    <button class="secondary">Tạo tài khoản mới</button>
+    <small class="demo">Demo: admin / admin / 11C1</small>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+<header class="top">
+  <button class="round">☰</button>
+  <div class="logo">Kỷ niệm 11C1</div>
+  <button class="round">🔍</button>
+  <button class="round notify" id="notifyBtn">🔔<b>1</b></button>
+  <div class="my-avatar">A</div>
+</header>
+
+<main>
+<section class="welcome card">
+  <div class="big-avatar">A</div>
+  <div><h2>Xin chào, admin <span class="verified">✓</span></h2><p>Lớp 11C1 · Đang hoạt động</p></div>
+</section>
+
+<section class="notes">
+  <div class="note add"><div>＋</div><small>Ghi chú</small></div>
+  <div class="note"><div>👤</div><small>Hùng</small></div>
+  <div class="note"><div>🙂</div><small>Khang</small></div>
+  <div class="note"><div>😎</div><small>Long</small></div>
+  <div class="note"><div>🧑</div><small>Tiến</small></div>
+</section>
+
+<section class="box-title">
+  <div><span class="online"></span><b>BOX 11C1</b><small> 24 thành viên</small></div>
+  <button class="round">•••</button>
+</section>
+
+<section class="card post">
+  <div class="post-head"><div class="avatar">👤</div><div><b>Hùng <span class="verified">✓</span></b><small>10 phút trước</small></div></div>
+  <p>Chào mọi người 👋 Đây là bản demo Box 11C1.</p>
+  <div class="actions"><button>♡ Thích</button><button>💬 Bình luận</button><button>↗ Chia sẻ</button></div>
+</section>
+
+<section class="card chat-preview">
+  <div class="section-head"><b>Hộp thư</b><button id="openInbox" class="primary small">Mở Chat Box</button></div>
+  <div class="person" data-name="Nguyễn Khang">
+    <div class="avatar">🙂<i></i></div><div><b>Nguyễn Khang <span class="verified">✓</span></b><small>Đang hoạt động</small></div>
+  </div>
+  <div class="person" data-name="Nguyễn Nhật Long">
+    <div class="avatar">😎<i></i></div><div><b>Nguyễn Nhật Long <span class="verified">✓</span></b><small>Đang soạn tin...</small></div>
+  </div>
+</section>
+</main>
+
+<button class="chat-fab" id="chatFab">💬<b>2</b></button>
+
+<div id="inbox" class="panel">
+  <div class="panel-head"><button class="back" id="closeInbox">‹</button><h2>Hộp thư</h2><button class="round">🔍</button><button class="round">•••</button></div>
+  <div class="notes inbox-notes">
+    <div class="note"><div>＋</div><small>Ghi chú</small></div><div class="note"><div>👤</div><small>Hùng</small></div><div class="note"><div>🙂</div><small>Khang</small></div><div class="note"><div>😎</div><small>Long</small></div>
+  </div>
+  <div class="filters"><b>Chính</b><span>Yêu cầu</span><span>Chưa đọc</span><span>Đã ghim</span></div>
+  <div class="person choose" data-name="Nguyễn Khang"><div class="avatar">🙂<i></i></div><div><b>Nguyễn Khang <span class="verified">✓</span></b><small>Đang hoạt động</small></div><em>2</em></div>
+  <div class="person choose" data-name="Nguyễn Nhật Long"><div class="avatar">😎<i></i></div><div><b>Nguyễn Nhật Long <span class="verified">✓</span></b><small>Đang soạn tin...</small></div></div>
+  <div class="person choose" data-name="Bảo"><div class="avatar">🧑</div><div><b>Bảo</b><small>Ảnh</small></div></div>
+</div>
+
+<div id="conversation" class="conversation">
+  <div class="panel-head"><button class="back" id="back">‹</button><div class="chat-user"><div class="avatar">🙂<i></i></div><div><b id="chatName">Nguyễn Khang <span class="verified">✓</span></b><small>Đang hoạt động</small></div></div><button class="round">📞</button><button class="round">🎥</button><button class="round">ⓘ</button></div>
+  <div id="messages" class="messages">
+    <div class="bubble">Ê, vào Box chưa? 😄</div>
+    <div class="bubble me">Rồi, đang test demo nè.</div>
+    <div id="remoteTyping" class="typing">Nguyễn Khang đang soạn tin <i>•</i><i>•</i><i>•</i></div>
+  </div>
+  <form class="sendbar" id="sendForm"><button type="button" class="round">＋</button><input id="msg" placeholder="Nhắn tin"><button type="button" class="round">🖼️</button><button class="send">➤</button></form>
+</div>
+
+<div id="notice" class="toast">🔔 <b>Thông báo</b><br>Admin vừa gửi thông báo tới tất cả người dùng.</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
