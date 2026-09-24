@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kỷ niệm 11C1 — Demo</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+<header class="topbar">
+  <button class="round" id="menuBtn">☰</button><div class="brand">KỶ NIỆM <b>11C1</b></div>
+  <div class="top-actions"><button class="round">⌕</button><button class="round" id="notifyBtn">🔔</button><button class="round" id="accountBtn">👤</button></div>
+</header>
+
+<main class="feed">
+  <section class="notes cardless">
+    <div class="note add" id="addNote"><div class="note-avatar">＋</div><small>Tạo ghi chú</small></div>
+    <div class="note"><div class="note-avatar">👦</div><small>Hùng</small></div>
+    <div class="note"><div class="note-avatar">🙂</div><small>Khang</small></div>
+    <div class="note"><div class="note-avatar">😎</div><small>Long</small></div>
+    <div class="note"><div class="note-avatar">🧑</div><small>Tiến</small></div>
+    <div class="note"><div class="note-avatar">👩</div><small>Ngọc</small></div>
+  </section>
+
+  <section class="composer card">
+    <div class="mini-avatar" id="myAvatar">👤</div>
+    <button class="fake-input" id="openComposer">Bạn đang nghĩ gì?</button>
+  </section>
+
+  <section class="card post">
+    <div class="post-head"><div class="mini-avatar">👦</div><div><b>Hùng</b><small>Vừa đăng · 🌐</small></div><button class="more">•••</button></div>
+    <p>Một ngày bình thường của 11C1 📸</p>
+    <div class="demo-photo">ẢNH DEMO</div>
+    <div class="stats">❤️ 12　 💬 4</div><div class="post-actions"><button>♡ Thích</button><button>💬 Bình luận</button><button>↗ Chia sẻ</button></div>
+  </section>
+
+  <section class="card post">
+    <div class="post-head"><div class="mini-avatar">😎</div><div><b>Nguyễn Nhật Long</b><small>35 phút trước</small></div><button class="more">•••</button></div>
+    <p>Hôm nay lớp vui phết 😂</p>
+    <div class="stats">❤️ 7　 💬 2</div><div class="post-actions"><button>♡ Thích</button><button>💬 Bình luận</button><button>↗ Chia sẻ</button></div>
+  </section>
+</main>
+
+<button class="chat-fab" id="chatFab">💬<i>3</i></button>
+
+<!-- Chat list -->
+<div class="screen" id="inbox">
+  <div class="screen-head"><button class="back" id="closeInbox">‹</button><h2>Hộp thư</h2><button class="round">⌕</button><button class="round">•••</button></div>
+  <div class="inbox-notes"><div class="note"><div class="note-avatar">＋</div><small>Ghi chú</small></div><div class="note"><div class="note-avatar">👦</div><small>Hùng</small></div><div class="note"><div class="note-avatar">🙂</div><small>Khang</small></div><div class="note"><div class="note-avatar">😎</div><small>Long</small></div></div>
+  <div class="filters"><b>Chính</b><span>Yêu cầu</span><span>Chưa đọc</span><span>Đã ghim</span></div>
+  <div id="people">
+    <div class="person" data-name="Nguyễn Khang" data-online="Đang hoạt động"><div class="person-avatar">🙂<i></i></div><div><b>Nguyễn Khang</b><small>Đang hoạt động</small></div><em>2</em></div>
+    <div class="person" data-name="Nguyễn Nhật Long" data-online="Đang hoạt động"><div class="person-avatar">😎<i></i></div><div><b>Nguyễn Nhật Long</b><small>Ok để tí mình gửi</small></div></div>
+    <div class="person" data-name="Bảo" data-online="Hoạt động 12 phút trước"><div class="person-avatar">🧑</div><div><b>Bảo</b><small>Ảnh</small></div></div>
+    <div class="person" data-name="Tiến" data-online="Đang hoạt động"><div class="person-avatar">🙂<i></i></div><div><b>Tiến</b><small>Haha 😂</small></div></div>
+  </div>
+</div>
+
+<!-- Conversation -->
+<div class="conversation" id="conversation">
+  <div class="screen-head"><button class="back" id="backToInbox">‹</button><div class="person-title"><div class="person-avatar">🙂<i></i></div><div><b id="chatName">Người dùng</b><small id="chatStatus">Đang hoạt động</small></div></div><button class="round" id="blockBtn">🚫</button><button class="round">•••</button></div>
+  <div class="messages" id="messages"><div class="bubble">Ê, web demo ổn không? 😄</div><div class="bubble me">Ổn nha, đang test phần chat.</div></div>
+  <div class="typing" id="typing">Đang soạn tin <span>•</span><span>•</span><span>•</span></div>
+  <form class="message-bar" id="messageForm"><button type="button" class="round">＋</button><input id="messageInput" placeholder="Nhập tin nhắn..." autocomplete="off"><button class="send">➤</button></form>
+</div>
+
+<!-- Composer -->
+<div class="modal" id="composerModal"><div class="modal-box"><div class="modal-head"><b>Tạo bài viết</b><button class="close" data-close="composerModal">×</button></div><textarea placeholder="Bạn đang nghĩ gì?"></textarea><label class="upload">📷 Ảnh / 🎥 Video <input type="file" accept="image/*,video/*" hidden></label><button class="primary">Đăng bài</button></div></div>
+
+<!-- Note -->
+<div class="modal" id="noteModal"><div class="modal-box small"><div class="modal-head"><b>Ghi chú 24H</b><button class="close" data-close="noteModal">×</button></div><textarea maxlength="100" placeholder="Viết một ghi chú..."></textarea><small class="hint">Ghi chú sẽ tự hết hạn sau 24 giờ.</small><button class="primary">Đăng ghi chú</button></div></div>
+
+<!-- Account -->
+<div class="modal" id="accountModal"><div class="modal-box small"><div class="modal-head"><b>Tài khoản</b><button class="close" data-close="accountModal">×</button></div><div class="profile-big">👤</div><h3>Người dùng Demo</h3><p class="muted">demo@gmail.com</p><button class="secondary">Đổi avatar</button><button class="primary">Đăng xuất</button></div></div>
+
+<script src="app.js"></script>
+</body></html>
